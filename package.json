@@ -40,6 +40,8 @@
     "@vitest/eslint-plugin": "^1.6.17",
     "eslint": "^10.4.0",
     "eslint-plugin-perfectionist": "^5.9.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
     "prettier": "^3.8.3",
     "tsx": "^4.22.0",
     "typescript": "^6.0.3",
