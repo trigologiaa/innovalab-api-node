@@ -8,19 +8,21 @@ export default [
     ignores: ['**/*.js'],
   },
   eslint.configs.recommended,
-  tseslint.configs.strictTypeChecked,
-  tseslint.configs.stylisticTypeChecked,
+  ...tseslint.configs.strictTypeChecked,
+  ...tseslint.configs.stylisticTypeChecked,
   {
     languageOptions: {
       parserOptions: {
-        projectService: true,
+        projectService: {
+          allowDefaultProject: ['test/*.spec.ts', 'test/*.test.ts'],
+        },
         tsconfigRootDir: import.meta.dirname,
       },
     },
   },
   perfectionist.configs['recommended-natural'],
   {
-    files: ['**/*.test.ts', '**/*.spect.ts'],
+    files: ['**/*.test.ts', '**/*.spec.ts'],
     plugins: {
       vitest,
     },
