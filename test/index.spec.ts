@@ -1,17 +1,18 @@
-import supertest from 'supertest';
+import supertest, { Response, Test } from 'supertest';
+import TestAgent from 'supertest/lib/agent.js';
 import { afterAll, describe, expect, test } from 'vitest';
 
-import { application, server } from '../src/index.js';
+import { application, server } from '@/index.js';
 
-const requestWithSupertest = supertest(application);
+const requestWithSupertest: TestAgent<Test> = supertest(application);
 
-afterAll(() => {
+afterAll((): void => {
   server.close();
 });
 
-describe('GET /', () => {
-  test('should work OK', async () => {
-    const response = await requestWithSupertest.get('/');
+describe('GET /', (): void => {
+  test('should work OK', async (): Promise<void> => {
+    const response: Response = await requestWithSupertest.get('/');
     expect(response.status).toEqual(200);
   });
 });

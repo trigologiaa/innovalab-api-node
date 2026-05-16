@@ -13,14 +13,23 @@ export default [
   {
     languageOptions: {
       parserOptions: {
-        projectService: {
-          allowDefaultProject: ['test/*.spec.ts', 'test/*.test.ts'],
-        },
+        projectService: true,
         tsconfigRootDir: import.meta.dirname,
       },
     },
     rules: {
       '@typescript-eslint/explicit-function-return-type': 'error',
+      '@typescript-eslint/explicit-module-boundary-types': 'error',
+      '@typescript-eslint/typedef': [
+        'error',
+        {
+          variableDeclaration: true,
+          variableDeclarationIgnoreFunction: true,
+          memberVariableDeclaration: true,
+          parameter: true,
+          propertyDeclaration: true,
+        },
+      ],
     },
   },
   perfectionist.configs['recommended-natural'],
@@ -32,6 +41,25 @@ export default [
     rules: {
       ...vitest.configs.recommended.rules,
       '@typescript-eslint/unbound-method': 'off',
+      '@typescript-eslint/explicit-function-return-type': [
+        'error',
+        {
+          allowExpressions: true,
+          allowTypedFunctionExpressions: false,
+          allowHigherOrderFunctions: false,
+          allowDirectConstAssertionInArrowFunctions: false,
+        },
+      ],
+      '@typescript-eslint/typedef': [
+        'error',
+        {
+          variableDeclaration: true,
+          variableDeclarationIgnoreFunction: true,
+          memberVariableDeclaration: true,
+          parameter: true,
+          propertyDeclaration: true,
+        },
+      ],
     },
   },
 ];
