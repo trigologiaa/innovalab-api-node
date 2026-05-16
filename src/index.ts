@@ -1,13 +1,13 @@
 import express from "express";
 
 const application = express();
-const port = "3000";
+const port: string = "3000";
 
-application.get("/", (_request, response) => {
+application.get("/", (_request, response): void => {
   response.send("Hello, World!");
   console.log("Response send");
 });
 
-application.listen(port, () => {
+application.listen(port, (): void => {
   console.log(`Example application listening on port ${port}`);
 });
