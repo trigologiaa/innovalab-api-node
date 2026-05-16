@@ -1,6 +1,7 @@
-import { application, server } from '../src/index.js';
-import { describe, test, expect, afterAll } from 'vitest';
 import supertest from 'supertest';
+import { afterAll, describe, expect, test } from 'vitest';
+
+import { application, server } from '../src/index.js';
 
 const requestWithSupertest = supertest(application);
 
