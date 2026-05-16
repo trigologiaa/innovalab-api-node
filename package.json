@@ -13,13 +13,22 @@
     "type-check": "tsc --noEmit",
     "lint": "eslint .",
     "lint:fix": "eslint --fix",
-    "format": "prettier --write",
-    "format:check": "prettier --check",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "test": "vitest",
     "test:run": "vitest --run",
     "test:ui": "vitest --ui",
     "coverage": "vitest run --coverage",
     "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint",
+      "prettier --check ."
+    ],
+    "*.{json,yml,yaml,md}": [
+      "prettier --check ."
+    ]
   },
   "keywords": [],
   "author": "Gastón Ribero, Nicolás Bilic",
