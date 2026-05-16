@@ -58,6 +58,44 @@ docker compose up -d --build
 
 ---
 
+## Usar script de automatización
+
+Para ejecutar un script de automatización se pueden utilizar `build.sh` en Linux/MacOS o `build.ps1` en Windows.
+
+### En Linux/MacOS
+
+Se le deben dar permisos de ejecución al archivo:
+
+```sh
+chmod +x build.sh
+```
+
+Se ejecuta el script:
+
+```sh
+./build.sh
+```
+
+Para cortar la ejecución y liberar el puerto usado se debe presionar **CTRL + C**.
+
+### En Windows
+
+Se le deben dar permisos de ejecución al archivo:
+
+```sh
+PowerShell -ExecutionPolicy Bypass -File .\build.ps1
+```
+
+Se ejecuta el script:
+
+```sh
+./build.ps1
+```
+
+Para cortar la ejecución y liberar el puerto usado se debe presionar **CTRL + C**.
+
+---
+
 ## Entorno de desarrollo local (opcional)
 
 Para desarrollar el proyecto y correr los tests o el linter directamente de forma nativa en el equipo (sin usar Docker), se requiere Node.js v24.15.0 o superior y seguir estos pasos:

@@ -58,6 +58,44 @@ docker compose up -d --build
 
 ---
 
+## Using the automation script
+
+To run the automation script, you can use `build.sh` on Linux/MacOS or `build.ps1` on Windows.
+
+### On Linux/MacOS
+
+You must grant execution permissions to the file:
+
+```sh
+chmod +x build.sh
+```
+
+Run the script:
+
+```sh
+./build.sh
+```
+
+To stop the execution and free up the port being used, press **CTRL + C**.
+
+### On Windows
+
+You must grant execution permissions to the file:
+
+```sh
+PowerShell -ExecutionPolicy Bypass -File .\build.sh
+```
+
+Run the script:
+
+```sh
+./build.ps1
+```
+
+To stop the execution and free up the port being used, press **CTRL + C**.
+
+---
+
 ## Local development environment (optional)
 
 To develop the project and run tests or the linter directly on your host machine (without using Docker), Node.js v24.15.0 or higher is required. Follow these steps:
