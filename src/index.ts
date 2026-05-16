@@ -1,11 +1,11 @@
-import express from "express";
+import express from 'express';
 
 const application = express();
-const port: string = "3000";
+const port: string = process.env.PORT ?? '3001';
 
-application.get("/", (_request, response): void => {
-  response.send("Hello, World!");
-  console.log("Response send");
+application.get('/', (_request, response): void => {
+  response.send('Hello, World!');
+  console.log('Response send');
 });
 
 application.listen(port, (): void => {
