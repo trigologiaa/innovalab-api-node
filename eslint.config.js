@@ -1,6 +1,7 @@
 import eslint from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import perfectionist from 'eslint-plugin-perfectionist';
+import vitest from '@vitest/eslint-plugin';
 
 export default [
   {
@@ -18,4 +19,14 @@ export default [
     },
   },
   perfectionist.configs['recommended-natural'],
+  {
+    files: ['**/*.test.ts', '**/*.spect.ts'],
+    plugins: {
+      vitest,
+    },
+    rules: {
+      ...vitest.configs.recommended.rules,
+      '@typescript-eslint/unbound-method': 'off',
+    },
+  },
 ];
